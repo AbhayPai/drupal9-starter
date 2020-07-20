@@ -1,0 +1,22 @@
+image: "proboci/ubuntu:18.04-php7.3"
+steps:
+  - name: "Step 1:- Updating environment"
+    plugin: "Script"
+    script: |
+      chmod +x $SRC_DIR/.probo/step-1.sh && $SRC_DIR/.probo/step-1.sh
+  - name: "Step 2:- Download and Configure Dependencies"
+    plugin: "Script"
+    script: |
+      chmod +x $SRC_DIR/.probo/step-2.sh && $SRC_DIR/.probo/step-2.sh
+  - name: "Step 3:- Running Scss Lint"
+    plugin: "Script"
+    script: |
+      chmod +x $SRC_DIR/.probo/step-3.sh && $SRC_DIR/.probo/step-3.sh
+  - name: "Step 4:- Running JS Lint"
+    plugin: "Script"
+    script: |
+      chmod +x $SRC_DIR/.probo/step-4.sh && $SRC_DIR/.probo/step-4.sh
+  - name: "Step 5:- Running PHPCS"
+    plugin: "Script"
+    script: |
+      chmod +x $SRC_DIR/.probo/step-5.sh && $SRC_DIR/.probo/step-5.sh

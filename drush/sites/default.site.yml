@@ -1,0 +1,4 @@
+local:
+  uri: 'http://default.lndo.site'
+  paths:
+    - uri: '/sites/default/'

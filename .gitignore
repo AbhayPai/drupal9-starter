@@ -1,0 +1,15 @@
+# Ignore CMS folders
+vendor/
+web/core/
+
+web/sites/*/settings.php
+web/sites/*/settings.local.php
+web/sites/*/*services.yml
+
+web/sites/development.services.yml
+
+web/sites/*/files
+web/sites/*/private
+web/sites/.gitignore
+
+node_modules/
