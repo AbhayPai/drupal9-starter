@@ -1,0 +1,44 @@
+name: lando-setup-with-drupal9
+recipe: drupal9
+config:
+  php: '7.3'
+  webroot: web/
+  drush: 10.2.2
+tooling:
+  "lint:php":
+    service: appserver
+    cmd: "/app/vendor/bin/phpcs --standard=phpcs.xml"
+    description: "Runs php linter against your custom code. Ex: lando lint:php"
+  "lint:scss":
+    service: node
+    cmd: "npm run lint:scss:all"
+    description: "Runs scss linter against your custom code. Ex: lando lint:scss"
+  "lint:js":
+    service: node
+    cmd: "npm run lint:js:all"
+    description: "Runs js linter against your custom code. Ex: lando lint:js"
+  "compile:scss":
+    service: node
+    cmd: "gulp -f=gulp.js"
+    description: "Converts scss to css. Ex: lando compile:scss web/source web/destination"
+  "custom:npm":
+    service: node
+    cmd: "npm"
+    description: "Runs npm for installing or removing modules. Ex: lando custom:npm _yourcommand_"
+proxy:
+  appserver:
+    - default.lndo.site
+services:
+  node:
+    type: node:13
+    build:
+      - "cd /app && npm install && npm install -g gulp-cli"
+  appserver:
+    build:
+      - "cd /app && composer install"
+      - "/app/vendor/bin/phpcs --config-set installed_paths /app/vendor/drupal/coder/coder_sniffer"
+  default:
+    type: mysql:5.7
+    portforward: true
+    config:
+      confd: lando/mysql/conf.d

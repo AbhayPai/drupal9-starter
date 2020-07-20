@@ -1,0 +1,32 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+
+    "unit-case": "lower",
+
+    "color-hex-case": null,
+    "color-no-invalid-hex": true,
+
+    "no-eol-whitespace": true,
+
+    "selector-pseudo-element-colon-notation": null,
+
+    "declaration-empty-line-before": null,
+
+    "at-rule-no-unknown": null,
+    "at-rule-empty-line-before": null,
+    "at-rule-name-case": "lower",
+    "at-rule-name-space-after": "always-single-line",
+    "at-rule-semicolon-newline-after": "always",
+
+    "block-no-empty": true,
+    "block-closing-brace-empty-line-before": "never",
+    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always-multi-line",
+    "block-closing-brace-space-before": "always-single-line",
+    "block-opening-brace-newline-after": "always-multi-line",
+    "block-opening-brace-space-after": "always-single-line",
+    "block-opening-brace-space-before": "always"
+  }
+}

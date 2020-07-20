@@ -1,0 +1,8 @@
+vendor/*
+node_modules/*
+
+web/core/*
+
+web/modules/**/js/*.js
+web/themes/**/js/*.js
+web/profiles/**/**/*.js
