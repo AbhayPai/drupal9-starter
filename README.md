@@ -1,6 +1,10 @@
 # Lando Setup with Drupal 9
 
-## Prerequisite for this is installation of lando in development machine. This project also includes continuos integration of probo with drupal 9.
+## Prerequisite for this is installation of lando in development machine are:
+1. Docker
+2. Lando
+
+## This project also includes continuos integration of probo with drupal 9.
 
 ### Step 1: Clone this respository
 ```sh
