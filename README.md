@@ -13,7 +13,7 @@ git clone  git@github.com:AbhayPai/drupal9.git or git clone https://github.com/A
 
 ### Step 2: Change directory to cloned project
 ```sh
-cd lando-drupal9
+cd drupal9
 ```
 
 ### Step 3: Start lando
