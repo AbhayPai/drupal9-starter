@@ -2,8 +2,6 @@
 <ruleset name="drupal">
   <description>Default PHP CodeSniffer configuration for Drupal core.</description>
 
-  <file>web/modules/custom</file>
-  <file>web/profiles/custom</file>
   <file>web/themes/custom</file>
 
   <arg name="colors"/>

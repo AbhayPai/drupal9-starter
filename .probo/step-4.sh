@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $SRC_DIR && npm run lint:js:all
+cd $SRC_DIR && npm run lint:js:themes
 
 if (( $? > 1 ))
 then

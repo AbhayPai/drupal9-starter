@@ -1,15 +1,26 @@
-# Ignore CMS folders
-vendor/
-web/core/
+/vendor/
+/node_modules/
 
-web/sites/*/settings.php
-web/sites/*/settings.local.php
-web/sites/*/*services.yml
+/web/INSTALL.txt
+/web/README.txt
+/web/robots.txt
+/web/index.php
 
-web/sites/development.services.yml
+/web/core/
+/web/themes/contrib/
+/web/modules/contrib/
+/web/profiles/contrib/
 
-web/sites/*/files
-web/sites/*/private
-web/sites/.gitignore
+# Ignore sites path which are not necessary.
+/web/sites/*/settings.local.php
 
-node_modules/
+/web/sites/default/default.services.yml
+/web/sites/default/default.settings.php
+
+/web/sites/development.services.yml
+/web/sites/example.settings.local.php
+/web/sites/sites.local.php
+/web/sites/services.local.yml
+
+/web/sites/*/files
+/web/sites/*/private

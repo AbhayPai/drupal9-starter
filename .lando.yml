@@ -3,28 +3,27 @@ recipe: drupal9
 config:
   php: '7.3'
   webroot: web/
-  drush: 10.2.2
 tooling:
-  "lint:php":
+  "lint:php:themes":
     service: appserver
-    cmd: "/app/vendor/bin/phpcs --standard=phpcs.xml"
+    cmd: "/app/vendor/bin/phpcs --standard=phpcs-themes.xml"
     description: "Runs php linter against your custom code. Ex: lando lint:php"
   "lint:scss":
     service: node
-    cmd: "npm run lint:scss:all"
+    cmd: "npm run lint:scss:themes"
     description: "Runs scss linter against your custom code. Ex: lando lint:scss"
   "lint:js":
     service: node
-    cmd: "npm run lint:js:all"
+    cmd: "npm run lint:js:themes"
     description: "Runs js linter against your custom code. Ex: lando lint:js"
   "compile:scss":
     service: node
     cmd: "gulp -f=gulp.js"
-    description: "Converts scss to css. Ex: lando compile:scss web/source web/destination"
-  "custom:npm":
+    description: "Converts scss to css. Ex: lando compile:scss <themes/watchthemes>"
+  "npm":
     service: node
     cmd: "npm"
-    description: "Runs npm for installing or removing modules. Ex: lando custom:npm _yourcommand_"
+    description: "Runs npm for installing or removing modules. Ex: lando npm <yourcommand>"
 proxy:
   appserver:
     - default.lndo.site
