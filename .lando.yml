@@ -29,7 +29,7 @@ proxy:
     - default.lndo.site
 services:
   node:
-    type: node:13
+    type: node:14
     build:
       - "cd /app && npm install && npm install -g gulp-cli"
   appserver:
