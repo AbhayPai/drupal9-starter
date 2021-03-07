@@ -21,9 +21,10 @@ cd drupal9
 lando start
 ```
 
-### Step 4: Download drupal using lando command
+### Step 4: Configure settings.php for default site for local development
 ```sh
-lando composer install
+cp web/sites/default/settings.local.rename-as-php web/sites/default/settings.local.php && \
+cp web/sites/development.services.rename-as-yml web/sites/development.services.yml
 ```
 
 ### Helpful commands

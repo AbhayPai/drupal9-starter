@@ -3,6 +3,7 @@ recipe: drupal9
 config:
   php: '7.3'
   webroot: web/
+  drush: ^10
 tooling:
   "lint:php:themes":
     service: appserver
