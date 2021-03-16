@@ -41,7 +41,7 @@ lando info
 ```
 3. To validate phpcs for custom code.
 ```sh
-lando lint:php
+lando lint:php:themes
 ```
 
 4. To use lint for custom js files.
