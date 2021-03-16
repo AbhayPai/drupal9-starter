@@ -7,7 +7,7 @@ config:
 tooling:
   "lint:php:themes":
     service: appserver
-    cmd: "/app/vendor/bin/phpcs --standard=phpcs-themes.xml"
+    cmd: "composer phpcs:themes"
     description: "Runs php linter against your custom code. Ex: lando lint:php"
   "lint:scss":
     service: node

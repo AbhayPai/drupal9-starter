@@ -26,6 +26,10 @@
     "conflict": {
         "drupal/drupal": "*"
     },
+    "scripts": {
+        "phpcs:config": "phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer",
+        "phpcs:themes": "phpcs --standard=automation/phpcs/themes.xml"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {

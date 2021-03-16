@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd $SRC_DIR
-./vendor/bin/phpcs -pv --colors --standard=phpcs-themes.xml web/modules/custom/ web/themes/custom web/profiles/custom
+./vendor/bin/phpcs -pv --colors --standard=automation/phpcs/themes.xml
 phplintstatus=$?
 
 if (( $phplintstatus > 1 ))
