@@ -26,6 +26,9 @@
     "conflict": {
         "drupal/drupal": "*"
     },
+    "scripts": {
+        "phpcs:themes": "phpcs --standard=automation/phpcs/themes.xml"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
