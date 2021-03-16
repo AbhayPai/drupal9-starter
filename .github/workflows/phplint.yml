@@ -19,5 +19,7 @@ jobs:
           ${{ runner.os }}-php-
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
+    - name: Run PHPCS configuration
+      run: composer phpcs:config
     - name: Run PHPCS in themes
       run: composer phpcs:themes
