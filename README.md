@@ -27,7 +27,7 @@ cp web/sites/development.services.rename-as-yml web/sites/development.services.y
 lando start
 ```
 
-### Helpful commands
+### Helpful Commands
 
 1. Drush to check available site aliases.
 ```sh

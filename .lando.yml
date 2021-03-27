@@ -1,7 +1,8 @@
-name: lando-setup-with-drupal9
+name: drupal9
 recipe: drupal9
 config:
-  php: '7.3'
+  via: apache
+  php: '7.4'
   webroot: web/
   drush: ^10
 tooling:
@@ -27,7 +28,7 @@ tooling:
     description: "Runs npm for installing or removing modules. Ex: lando npm <yourcommand>"
 proxy:
   appserver:
-    - default.lndo.site
+    - defaultd9.lndo.site
 services:
   node:
     type: node:14
@@ -37,7 +38,7 @@ services:
     build:
       - "cd /app && composer install"
       - "/app/vendor/bin/phpcs --config-set installed_paths /app/vendor/drupal/coder/coder_sniffer"
-  default:
+  defaultd9:
     type: mysql:5.7
     portforward: true
     config:
