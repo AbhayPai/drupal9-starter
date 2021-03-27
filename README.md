@@ -6,6 +6,8 @@
 
 ## This project also includes continuos integration of probo with drupal 9.
 
+## This project is also using sonarcloud.io for reporting bugs in the code. [Drupal 9](https://sonarcloud.io/dashboard?id=AbhayPai_drupal9)
+
 ### Step 1: Clone this respository
 ```sh
 git clone  git@github.com:AbhayPai/drupal9.git or git clone https://github.com/AbhayPai/drupal9.git
