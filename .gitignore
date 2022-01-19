@@ -24,3 +24,6 @@
 
 /web/sites/*/files
 /web/sites/*/private
+
+# Ignore folder related phpunit test.
+/web/sites/**test

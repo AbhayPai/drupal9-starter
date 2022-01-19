@@ -289,8 +289,11 @@ $databases = [];
  * @code
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
+ *
+ * Please ignore this since it will override if you are generating a new site
+ * from scratch.
  */
-$settings['hash_salt'] = 'Tb2RSgersFurd5i61IozjdamUF8aT-quNBqpkK1jQ22IMxEgAn7GWTRcAqgJauuqz6u2Eq-__g';
+$settings['hash_salt'] = 'xRlrBdohup8PY3zE2ZGP6I0ErjQUn1oeeYE0dztse3q40kD8tPhx7gPm0HaJqTwiTKPxOSaNuA';
 
 /**
  * Deployment identifier.
@@ -810,4 +813,4 @@ function getenv_file($arg = NULL) {
   return $env[$arg];
 }
 
-$settings['config_sync_directory'] = 'config/sync/default';
+$settings['config_sync_directory'] = '../config/sync/default';

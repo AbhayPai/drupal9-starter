@@ -9,7 +9,31 @@ tooling:
   "lint:php:themes":
     service: appserver
     cmd: "composer phpcs:themes"
-    description: "Runs php linter against your custom code. Ex: lando lint:php"
+    description: "Runs php linter against your custom code. Ex: lando lint:php:themes"
+  "lint:php:themes:fix":
+    service: appserver
+    cmd: "composer phpcbf:themes"
+    description: "Fixes php linter against your custom code. Ex: lando lint:php:themes:fix"
+  "lint:php:modules":
+    service: appserver
+    cmd: "composer phpcs:modules"
+    description: "Runs php linter against your custom code. Ex: lando lint:php:modules"
+  "lint:php:modules:fix":
+    service: appserver
+    cmd: "composer phpcbf:modules"
+    description: "Fixes php linter against your custom code. Ex: lando lint:php:modules:fix"
+  "deprecated:modules":
+    service: appserver
+    cmd: "composer deprecated:modules"
+    description: "Check Drupal modules code for deprecations and discover bugs via static analysis."
+  "deprecated:themes":
+    service: appserver
+    cmd: "composer deprecated:themes"
+    description: "Check Drupal themes code for deprecations and discover bugs via static analysis."
+  "phunit:modules":
+    service: appserver
+    cmd: "composer phunit:modules"
+    description: "Run PHPUnit tests on a Drupal modules."
   "lint:scss":
     service: node
     cmd: "npm run lint:scss:themes"
@@ -28,7 +52,7 @@ tooling:
     description: "Runs npm for installing or removing modules. Ex: lando npm <yourcommand>"
 proxy:
   appserver:
-    - defaultd9.lndo.site
+    - drupal9.lndo.site
 services:
   node:
     type: node:14
@@ -38,7 +62,7 @@ services:
     build:
       - "cd /app && composer install"
       - "/app/vendor/bin/phpcs --config-set installed_paths /app/vendor/drupal/coder/coder_sniffer"
-  defaultd9:
+  drupal9:
     type: mysql:5.7
     portforward: true
     config:

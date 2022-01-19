@@ -10,7 +10,7 @@
 
 ### Step 1: Clone this respository
 ```sh
-git clone  git@github.com:AbhayPai/drupal9.git or git clone https://github.com/AbhayPai/drupal9.git
+git clone https://github.com/AbhayPai/drupal9.git
 ```
 
 ### Step 2: Change directory to cloned project
@@ -30,33 +30,88 @@ lando start
 ```
 
 ### Helpful Commands
-
-1. Drush to check available site aliases.
+___
+### Drush to check available site aliases.
 ```sh
 lando drush sa
 ```
 
-2. To check credentials of mysql database.
+### To check credentials of mysql database.
 ```sh
 lando info
-
 ```
-3. To validate phpcs for custom code.
+
+### To install composer packages.
+```sh
+lando composer install <packagename>
+```
+
+### To update composer packages.
+```sh
+lando composer update <packagename>
+```
+
+### To configure composer for phpcs.
+```sh
+lando composer phpcs:config
+```
+
+### To validate phpcs for custom code in themes.
 ```sh
 lando lint:php:themes
 ```
 
-4. To use lint for custom js files.
+### To validate phpcs for custom code in modules.
+```sh
+lando lint:php:modules
+```
+
+### To fix phpcs for custom code in modules.
+```sh
+lando lint:php:modules:fix
+```
+
+### To fix phpcs for custom code in themes.
+```sh
+lando lint:php:themes:fix
+```
+
+### To validate deprecated of custom code in modules.
+```sh
+lando deprecated:modules
+```
+
+### To validate deprecated of custom code in themes.
+```sh
+lando deprecated:themes
+```
+
+### To run phpunit of custom code in modules.
+```sh
+lando phunit:modules
+```
+
+### To install npm packages.
+```sh
+lando npm install <packagename>
+```
+
+### To update npm packages.
+```sh
+lando npm update <packagename>
+```
+
+### To use lint for custom js files.
 ```sh
 lando lint:js
 ```
 
-5. To use lint for custom scss files.
+### To use lint for custom scss files.
 ```sh
 lando lint:scss
 ```
 
-6. To compile scss files.
+### To compile scss files.
 ```sh
 lando compile:scss <themes>
 ```

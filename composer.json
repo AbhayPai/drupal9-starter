@@ -21,19 +21,32 @@
         "drush/drush": "^10"
     },
     "require-dev": {
-        "drupal/coder": "^8.3"
+        "drupal/coder": "^8.3",
+        "drupal/core-dev": "^9.3",
+        "mglaman/drupal-check": "^1.2",
+        "phpspec/prophecy-phpunit": "^2"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
     "scripts": {
         "phpcs:config": "phpcs --config-set installed_paths vendor/drupal/coder/coder_sniffer",
-        "phpcs:themes": "phpcs --standard=automation/phpcs/themes.xml"
+        "phpcs:themes": "phpcs --standard=automation/phpcs/themes.xml",
+        "phpcs:modules": "phpcs --standard=automation/phpcs/modules.xml",
+        "phpcbf:themes": "phpcbf --standard=automation/phpcs/themes.xml",
+        "phpcbf:modules": "phpcbf --standard=automation/phpcs/modules.xml",
+        "deprecated:modules": "drupal-check -ad web/modules/custom",
+        "deprecated:themes": "drupal-check -ad web/themes/custom",
+        "phunit:modules": "phpunit --configuration=automation/phpunit/modules.xml web/modules/custom"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -42,13 +55,13 @@
             },
             "file-mapping": {
                 "[web-root]/sites/default/default.services.yml": false,
-                "[web-root]/sites/default/default.settings.php": false,
                 "[web-root]/sites/development.services.yml": false,
                 "[web-root]/sites/example.settings.local.php": false,
                 "[web-root]/sites/example.sites.php": false,
                 "[web-root]/example.gitignore": false,
                 "[web-root]/INSTALL.txt": false,
-                "[web-root]/README.txt": false
+                "[web-root]/README.txt": false,
+                "[web-root]/README.md": false
             },
             "initial": {
                 ".editorconfig": "web/.editorconfig",
