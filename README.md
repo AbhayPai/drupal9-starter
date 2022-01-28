@@ -18,16 +18,19 @@ git clone https://github.com/AbhayPai/drupal9.git
 cd drupal9
 ```
 
-### Step 3: Configure settings.php for default site for local development
+### Step 3: Start lando
+```sh
+lando start
+```
+
+### Step 4: Configure settings.php for default site for local development
 ```sh
 cp web/sites/default/settings.local.rename-as-php web/sites/default/settings.local.php && \
 cp web/sites/development.services.rename-as-yml web/sites/development.services.yml
 ```
 
-### Step 4: Start lando
-```sh
-lando start
-```
+### Step 4: Tips
+* Make sure you are copying your auto generated $databases in your settings.local.php
 
 ### Helpful Commands
 ___
