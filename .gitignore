@@ -27,3 +27,6 @@
 
 # Ignore folder related phpunit test.
 /web/sites/**test
+
+# Ignore Mac generated files.
+**/.DS_Store
