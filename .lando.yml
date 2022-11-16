@@ -5,6 +5,8 @@ config:
   php: '7.4'
   webroot: web/
   drush: ^10
+  config:
+    php: automation/docker-utils/php/php.ini
 tooling:
   "lint:php:themes":
     service: appserver
@@ -57,7 +59,9 @@ services:
   node:
     type: node:14
     build:
-      - "cd /app && npm install && npm install -g gulp-cli"
+      - npm install
+    globals:
+      gulp-cli: latest
   appserver:
     build:
       - "cd /app && composer install"
