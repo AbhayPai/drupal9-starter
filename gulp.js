@@ -26,3 +26,13 @@ gulp.task('watchthemes', function (done) {
   gulp.watch('web/themes/custom/theme/scss/**/**/*.scss', gulp.series('themes'));
   done();
 });
+
+/**
+ * @task watch
+ * Watch _scss files for changes & recompile
+ * Clear cache when Drupal related files are changed
+ */
+ gulp.task('default', function (done) {
+  console.log('Please pass parameters. Available parameters are themes and watchthemes');
+  done();
+});
