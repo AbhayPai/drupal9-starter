@@ -1,8 +1,9 @@
-# Lando Setup with Drupal 9
+# DDev Setup with Drupal 9
 
 ## Prerequisite for this is installation of lando in development machine are:
-1. Docker
-2. Lando
+1. Colima
+2. Docker
+2. DDev
 
 ## This project also includes continuos integration of probo with drupal 9.
 
@@ -10,111 +11,107 @@
 
 ### Step 1: Clone this respository
 ```sh
-git clone https://github.com/AbhayPai/drupal9.git
+git clone https://github.com/AbhayPai/drupal9-starter.git
 ```
 
 ### Step 2: Change directory to cloned project
 ```sh
-cd drupal9
+cd drupal9-starter
 ```
 
-### Step 3: Start lando
+### Step 3: Start project
 ```sh
-lando start
+ddev start
 ```
 
 ### Step 4: Configure settings.php for default site for local development
 ```sh
-cp web/sites/default/settings.local.rename-as-php web/sites/default/settings.local.php && \
 cp web/sites/development.services.rename-as-yml web/sites/development.services.yml
 ```
-
-### Step 4: Tips
-* Make sure you are copying your auto generated $databases in your settings.local.php
 
 ### Helpful Commands
 ___
 ### Drush to check available site aliases.
 ```sh
-lando drush sa
+ddev drush sa
 ```
 
-### To check credentials of mysql database.
+### To get details of project.
 ```sh
-lando info
+ddev describe
 ```
 
 ### To install composer packages.
 ```sh
-lando composer install <packagename>
+ddev composer install <packagename>
 ```
 
 ### To update composer packages.
 ```sh
-lando composer update <packagename>
+ddev composer update <packagename>
 ```
 
 ### To configure composer for phpcs.
 ```sh
-lando composer phpcs:config
+ddev composer phpcs:config
 ```
 
 ### To validate phpcs for custom code in themes.
 ```sh
-lando lint:php:themes
+ddev composer phpcs:themes
 ```
 
 ### To validate phpcs for custom code in modules.
 ```sh
-lando lint:php:modules
+ddev composer phpcs:modules
 ```
 
 ### To fix phpcs for custom code in modules.
 ```sh
-lando lint:php:modules:fix
+ddev composer phpcbf:themes
 ```
 
 ### To fix phpcs for custom code in themes.
 ```sh
-lando lint:php:themes:fix
+ddev composer phpcbf:modules
 ```
 
 ### To validate deprecated of custom code in modules.
 ```sh
-lando deprecated:modules
+ddev composer deprecated:modules
 ```
 
 ### To validate deprecated of custom code in themes.
 ```sh
-lando deprecated:themes
+ddev composer deprecated:themes
 ```
 
 ### To run phpunit of custom code in modules.
 ```sh
-lando phunit:modules
+ddev composer phunit:modules
 ```
 
 ### To install npm packages.
 ```sh
-lando npm install <packagename>
+ddev npm install <packagename>
 ```
 
 ### To update npm packages.
 ```sh
-lando npm update <packagename>
+ddev npm update <packagename>
 ```
 
 ### To use lint for custom js files.
 ```sh
-lando lint:js
+ddev npm run lint:js:themes
 ```
 
 ### To use lint for custom scss files.
 ```sh
-lando lint:scss
+ddev npm run lint:scss:themes
 ```
 
 ### To compile scss files.
 ```sh
-lando compile:scss <themes>
+ddev npm run compile:scss
 ```
