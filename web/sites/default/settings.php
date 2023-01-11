@@ -776,41 +776,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
-if (getenv_file("rds_host") == FALSE) {
-  if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-    include $app_root . '/' . $site_path . '/settings.local.php';
-  }
-} else {
-  $databases['default']['default'] = array (
-    'database' => 'prod_default',
-    'username' => getenv_file("rds_username"),
-    'password' => getenv_file("rds_password"),
-    'prefix' => '',
-    'host' => getenv_file("rds_host"),
-    'port' => '3306',
-    'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-    'driver' => 'mysql',
-  );
-
-  $settings['trusted_host_patterns'] = [
-    '^www\.default\.com$',
-    '^default\.com$'
-  ];
-
-  $settings['reverse_proxy'] = TRUE;
-  $settings['reverse_proxy_addresses'] = array($_SERVER['REMOTE_ADDR']);
-}
-
-function getenv_file($arg = NULL) {
-  if (!file_exists('/var/www/.env')) {
-    return FALSE;
-  }
-
-  // @todo  make this more dynamic
-  $env_dump = file_get_contents('/var/www/.env');
-  $env = array();
-  parse_str(str_replace("\n", "&", $env_dump), $env);
-  return $env[$arg];
-}
 
 $settings['config_sync_directory'] = '../config/sync/default';
+
+// Automatically generated include for settings managed by ddev.
+$ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
+if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
+  require $ddev_settings;
+}
