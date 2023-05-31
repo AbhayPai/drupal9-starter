@@ -17,6 +17,13 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "16"
+hooks:
+  post-start:
+    - exec: echo "Going silent for a while to install composer and npm packages..."
+    - composer: install --quiet
+    - exec: npm install --silent
+    - exec: drush site:install --quiet; drush uli
+    - exec: drush en -y devel_generate --quiet; drush cr --quiet
 
 # Key features of ddev's config.yaml:
 

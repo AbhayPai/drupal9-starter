@@ -3,11 +3,12 @@
 ## Prerequisite for this is installation of lando in development machine are:
 1. Colima
 2. Docker
-2. DDev
+3. Ddev
 
 ## This project also includes continuos integration of probo with drupal 9.
 
-## This project is also using sonarcloud.io for reporting bugs in the code. [Drupal 9](https://sonarcloud.io/dashboard?id=AbhayPai_drupal9)
+## Helpful URL's
+1. [Local drupal9-starter](https://drupal9-starter.ddev.site)
 
 ### Step 1: Clone this respository
 ```sh
