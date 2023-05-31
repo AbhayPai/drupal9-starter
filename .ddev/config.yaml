@@ -17,6 +17,9 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "16"
+hooks:
+  post-start:
+    - exec: drush en -y devel_generate search_api_solr search_api_autocomplete search_api_spellcheck --quiet; drush cr --quiet
 
 # Key features of ddev's config.yaml:
 

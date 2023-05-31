@@ -3,11 +3,15 @@
 ## Prerequisite for this is installation of lando in development machine are:
 1. Colima
 2. Docker
-2. DDev
+3. Ddev
 
 ## This project also includes continuos integration of probo with drupal 9.
 
 ## This project is also using sonarcloud.io for reporting bugs in the code. [Drupal 9](https://sonarcloud.io/dashboard?id=AbhayPai_drupal9)
+
+## Helpful URL's
+1. [Local drupal9-starter](https://drupal9-starter.ddev.site)
+2. [Local Solr](http://drupal9-starter.ddev.site:8983/solr/#/)
 
 ### Step 1: Clone this respository
 ```sh
@@ -115,3 +119,19 @@ ddev npm run lint:scss:themes
 ```sh
 ddev npm run compile:scss
 ```
+
+## To ssh into solr container
+```sh
+ddev ssh -s solr
+```
+
+### Configuring Ddev with Solr on Local
+1. Create a search_api server at `admin/config/search/search-api` -> "Add server"
+2. Create a server with the following settings
+  * Set "Server name" to anything you want. Maybe `ddev-solr-server`.
+  * Set "Backend" to `Solr`
+  * Configure Solr backend
+    * Set "Solr Connector" to `Standard`
+    * Set "Solr host" to `solr`
+    * Set "solr core" to `dev`
+    * Under "Advanced server configuration" set the "solr.install.dir" to `/opt/solr`.
