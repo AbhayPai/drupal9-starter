@@ -1,11 +1,21 @@
 # DDev Setup with Drupal 9
 
+## Variants available for this drupal are:
+1. [Drupal with lando support](https://github.com/AbhayPai/drupal9-starter/tree/v1-supports-lando)
+2. [Drupal with probo support](https://github.com/AbhayPai/drupal9-starter/tree/v2-supports-probo)
+3. [Drupal with github workflow support](https://github.com/AbhayPai/drupal9-starter/tree/v3-supports-github-workflow)
+4. [Drupal with automation deployment support](https://github.com/AbhayPai/drupal9-starter/tree/v4-supports-automation-deployment)
+5. [Drupal with ddev with solr support](https://github.com/AbhayPai/drupal9-starter/tree/v5-supports-ddev-solr)
+
 ## Prerequisite for this is installation of lando in development machine are:
 1. Colima
 2. Docker
 3. Ddev
 
 ## This project also includes continuos integration of probo with drupal 9.
+
+## Helpful URL's
+1. [Local drupal9-starter](https://drupal9-starter.ddev.site)
 
 ## Helpful URL's
 1. [Local drupal9-starter](https://drupal9-starter.ddev.site)
