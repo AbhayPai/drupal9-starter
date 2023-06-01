@@ -1,11 +1,12 @@
 # DDev Setup with Drupal 9
 
 ## Variants available for this drupal are:
-1. [Drupal with lando support](https://github.com/AbhayPai/drupal9-starter/tree/v1-supports-lando)
-2. [Drupal with probo support](https://github.com/AbhayPai/drupal9-starter/tree/v2-supports-probo)
-3. [Drupal with github workflow support](https://github.com/AbhayPai/drupal9-starter/tree/v3-supports-github-workflow)
-4. [Drupal with automation deployment support](https://github.com/AbhayPai/drupal9-starter/tree/v4-supports-automation-deployment)
-5. [Drupal with ddev with solr support](https://github.com/AbhayPai/drupal9-starter/tree/v5-supports-ddev-solr)
+1. [Drupal 9 with lando support](https://github.com/AbhayPai/drupal9-starter/tree/v1-supports-lando)
+2. [Drupal 9 with probo support](https://github.com/AbhayPai/drupal9-starter/tree/v2-supports-probo)
+3. [Drupal 9 with github workflow support](https://github.com/AbhayPai/drupal9-starter/tree/v3-supports-github-workflow)
+4. [Drupal 9 with automation deployment support](https://github.com/AbhayPai/drupal9-starter/tree/v4-supports-automation-deployment)
+5. [Drupal 9 with ddev with solr support](https://github.com/AbhayPai/drupal9-starter/tree/v5-supports-ddev-solr)
+6. [Drupal 9 with ddev with elasticsearch support](https://github.com/AbhayPai/drupal9-starter/tree/v6-supports-ddev-elasticsearch)
 
 ## Prerequisite for this is installation of lando in development machine are:
 1. Colima
