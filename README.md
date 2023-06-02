@@ -126,3 +126,41 @@ ddev npm run lint:scss:themes
 ```sh
 ddev npm run compile:scss
 ```
+
+## To ssh into elasticsearch container
+```sh
+ddev ssh -s elasticsearch
+```
+
+### Configuring Ddev with elasticsearch on Local
+1. Create a Elasticsearch Cluster server
+  * Open this url `/admin/config/search/elasticsearch-connector` -> "Add cluster"
+    * `Administrative cluster name` => `Local`
+    * `Server URL` => `http://drupal9-starter-elasticsearch`
+    * `Make this cluster default connection` => `true`
+    * `Connection timeout` => `3`
+    * `Status` => `Active`
+2. Configuring a search server
+  * Open this url `/admin/config/search/search-api` -> "Add server"
+    * `Server name` => `Local`
+    * `Enabled` => `true`
+    * `Backend` => `Elasticsearch`
+    * Elasticsearch settings
+      * `Cluster` => `Local`
+      * `Fuziness` => `auto`
+3. Configuring a search server
+  * Open this url `/admin/config/search/search-api` -> "Add index"
+    * `Index name` => `Content Search`
+    * `Datasources` => `Content`
+    * `Server` => `Local`
+    * `Enabled` => `true`
+    * `Index items immediately` => `true`
+    * `Track changes in referenced entities` => `true`
+    * `Cron batch size` => `50`
+4. Add fields in search index
+  * Open this url `/admin/config/search/search-api/index/content_search/fields` -> "Add fields"
+  * Done
+  * Run Cron
+5. [Verify index creation](http://drupal9-starter.ddev.site:9200/_cat/indices?v)
+6. Create node from drupal cms
+7. [Verify indexed content](http://drupal9-starter.ddev.site:9200/elasticsearch_index_db_content_search/_search)

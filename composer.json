@@ -18,6 +18,8 @@
         "composer/installers": "^1.9",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
+        "drupal/elasticsearch_connector": "^7.0@alpha",
+        "drupal/search_api": "^1.29",
         "drush/drush": "^10"
     },
     "require-dev": {

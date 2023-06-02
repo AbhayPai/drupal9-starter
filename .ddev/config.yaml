@@ -23,7 +23,7 @@ hooks:
     - composer: install --quiet
     - exec: npm install --silent
     - exec: drush site:install --quiet; drush uli
-    - exec: drush en -y devel_generate --quiet; drush cr --quiet
+    - exec: drush en -y devel_generate search_api elasticsearch_connector --quiet; drush cr --quiet
 
 # Key features of ddev's config.yaml:
 
